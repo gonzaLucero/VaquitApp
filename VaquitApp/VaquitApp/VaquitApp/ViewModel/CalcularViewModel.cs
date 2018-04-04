@@ -23,7 +23,6 @@ namespace VaquitApp.ViewModel
             set { Set<double>(value); }
         }
 
-        public string Color { get { return Cuota >= 0 ? "#27ae60" : "#e74c3c"; } }
 
         public ObservableRangeCollection<Integrante> Integrantes { get; set; }
 
@@ -48,7 +47,7 @@ namespace VaquitApp.ViewModel
 
                 foreach (var integrante in Integrantes)
                 {
-                    integrante.Couta = integrante.Aporte - Cuota;
+                    integrante.Cuota = integrante.Aporte - Cuota;
                     this.Integrantes.Add(integrante);
                 }
             }

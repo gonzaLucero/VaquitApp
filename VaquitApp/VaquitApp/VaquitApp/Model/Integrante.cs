@@ -12,6 +12,10 @@ namespace VaquitApp.Model
 
         public double Aporte { get; set; }
 
-        public double Couta { get; set; }
+        public double Cuota { get; set; }
+
+        public string Color { get { return Cuota >= 0 ? "#27ae60" : "#e74c3c"; } }
+
+        public string Accion { get { return Cuota >= 0 ? "Recibe" : "Pone"; } }
     }
 }
