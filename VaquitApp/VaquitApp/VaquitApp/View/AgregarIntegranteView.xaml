@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VaquitApp.View.AgregarIntegranteView"
+             Title="VaquitApp"
+             BindingContext="{Binding IAgregarIntegranteViewModel}">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource ContentBase }">
+            <StackLayout VerticalOptions="Start" Orientation="Horizontal">
+                <StackLayout>
+                    <Label Text="Nombre del integrante"
+                        HorizontalOptions="StartAndExpand" />
+                    <Entry
+                    Text="{Binding Nombre}"
+                    Placeholder="Ingrese el nombre del integrante"  
+                    HorizontalOptions="StartAndExpand" ></Entry>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Text="Aporte"
+                    HorizontalOptions="StartAndExpand" />
+                    <Entry
+                    Text="{Binding Aporte}"
+                    Placeholder="Ingrese el aporte del integrante"
+                    Keyboard="Numeric"
+                    HorizontalOptions="StartAndExpand" ></Entry>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout VerticalOptions="Start" Orientation="Horizontal">
+                <Button
+                    Text="Agregar"
+                    Style="{StaticResource MainButton }"
+                    x:Name="btnAgregar"
+                        Command="{Binding AgregarIntegranteCommand}"
+                    HorizontalOptions="FillAndExpand"></Button>
+                <Button
+                    Text="Limpiar lista"
+                    Style="{StaticResource SecondaryButton }"
+                    x:Name="btnLimpiar"
+                        Command="{Binding LimpiarIntegrantesCommand}"
+                    HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+            <StackLayout VerticalOptions="End">
+                <ListView x:Name="ListaIntegrantes"
+                          HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Spacing="10" Margin="15">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Nombre}"></Label>
+                                        <Label Text="{Binding Aporte}" HorizontalOptions="EndAndExpand"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button
+                    Text="Calcular"
+                    Style="{StaticResource MainButton }"
+                    x:Name="btnCalcular"
+                        Command="{Binding CalcularCommand}"
+                    HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

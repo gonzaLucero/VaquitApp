@@ -2,9 +2,53 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VaquitApp.App">
-	<Application.Resources>
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Application resource dictionary -->
+            <Color x:Key="Primary">#1b60ab</Color>
+            <Color x:Key="PrimaryDark">#164f8c</Color>
+            <Color x:Key="PrimaryLight">#2196F3</Color>
+            <Color x:Key="AccentColor">#f0ad4e</Color>
+            <Color x:Key="LightBackgroundColor">#FAFAFA</Color>
+            <Color x:Key="DarkBackgroundColor">#C0C0C0</Color>
+            <Color x:Key="MediumGrayTextColor">#4d4d4d</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+            <Color x:Key="RedColor">#e74c3c</Color>
+            <Color x:Key="GreenColor">#27ae60</Color>
+            <Color x:Key="GrayColor">#f1f1f1</Color>
+            <Color x:Key="WhiteColor">#ffffff</Color>
 
-		<!-- Application resource dictionary -->
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}"></Setter>
+                <Setter Property="BarTextColor" Value="White"></Setter>
+            </Style>
 
-	</Application.Resources>
+            <Style x:Key="MainButton" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"></Setter>
+                <!--<Setter Property="BorderRadius" Value="0"></Setter>-->
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryLight}"></Setter>
+            </Style>
+
+            <Style x:Key="SecondaryButton" TargetType="Button" BasedOn="{StaticResource MainButton}">
+                <Setter Property="BackgroundColor" Value="{StaticResource LightBackgroundColor}"></Setter>
+                <Setter Property="TextColor"  Value="{StaticResource PrimaryLight}"></Setter>
+                <Setter Property="BorderColor" Value="{StaticResource PrimaryLight}"></Setter>
+                <Setter Property="BorderWidth" Value="2"></Setter>
+            </Style>
+
+            <Style x:Key="MainMenu" TargetType="StackLayout">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"></Setter>
+                <Setter Property="BackgroundColor" Value="{StaticResource Primary}"></Setter>
+                <Setter Property="Padding" Value="15"></Setter>
+                <Setter Property="Margin" Value="0"></Setter>
+                <Setter Property="Spacing" Value="4"></Setter>
+            </Style>
+
+            <Style x:Key="ContentBase" TargetType="StackLayout" BasedOn="{StaticResource MainMenu}">
+                <Setter Property="MinimumHeightRequest" Value="0"></Setter>
+                <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

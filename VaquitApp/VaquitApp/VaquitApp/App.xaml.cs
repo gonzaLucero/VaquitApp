@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using VaquitApp.View;
 using Xamarin.Forms;
 
 namespace VaquitApp
@@ -13,7 +13,7 @@ namespace VaquitApp
         {
             InitializeComponent();
 
-            MainPage = new VaquitApp.MainPage();
+            MainPage = new NavigationPage(new AgregarIntegranteView());
         }
 
         protected override void OnStart()
