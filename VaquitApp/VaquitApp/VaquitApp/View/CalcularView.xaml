@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VaquitApp.View.CalcularView"
+             Title="VaquitApp"
+             BindingContext="{Binding ICalcularViewModel}">
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource ContentBase }">
+            <StackLayout VerticalOptions="Start" Orientation="Horizontal">
+                <StackLayout>
+                    <Label Style="{StaticResource TextLabel }" 
+                        Text="Total gastado"
+                        HorizontalOptions="StartAndExpand" />
+                    <Label Style="{StaticResource ValueLabel }"
+                    Text="{Binding Total}" 
+                    HorizontalOptions="StartAndExpand" ></Label>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Style="{StaticResource TextLabel }"
+                           Text="Cuota por integrante"
+                           HorizontalOptions="StartAndExpand" />
+                    <Label Style="{StaticResource ValueLabel }"
+                    Text="{Binding Cuota}"
+                    HorizontalOptions="StartAndExpand" ></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout VerticalOptions="End">
+                <ListView x:Name="ListaIntegrantes"
+                          HasUnevenRows="true">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Spacing="10" Margin="15">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Nombre}"></Label>
+                                        <Label Text="{Binding Cuota}" HorizontalOptions="EndAndExpand"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

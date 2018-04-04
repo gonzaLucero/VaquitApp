@@ -49,6 +49,18 @@
                 <Setter Property="MinimumHeightRequest" Value="0"></Setter>
                 <Setter Property="BackgroundColor" Value="Transparent"></Setter>
             </Style>
+
+            <Style x:Key="TextLabel" TargetType="{x:Type Label}">
+                <Setter Property="LineBreakMode"  Value="TailTruncation"></Setter>
+                <Setter Property="WidthRequest" Value="200"></Setter>
+                <Setter Property="FontSize" Value="Small"></Setter>
+            </Style>
+
+            <Style x:Key="ValueLabel" TargetType="{x:Type Label}">
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource Primary}"></Setter>
+                <Setter Property="FontSize" Value="18"></Setter>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

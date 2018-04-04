@@ -11,5 +11,7 @@ namespace VaquitApp.Model
         public string  Nombre { get; set; }
 
         public double Aporte { get; set; }
+
+        public double Couta { get; set; }
     }
 }

@@ -14,11 +14,12 @@ namespace VaquitApp.View
     public partial class AgregarIntegranteView : ContentPage
     {
         private IAgregarIntegranteViewModel vm;
-
+        
         public AgregarIntegranteView()
         {
             InitializeComponent();
             BindingContext = vm = new AgregarIntegranteViewModel();
+            vm.Navigation = Navigation;
 
             ListaIntegrantes.ItemsSource = vm.Integrantes;
             ListaIntegrantes.ItemTapped += ListaIntegrantes_ItemTapped;

@@ -6,6 +6,7 @@ using VaquitApp.IViewModel;
 using VaquitApp.Model;
 using Xamarin.Forms;
 using System.Linq;
+using VaquitApp.View;
 
 namespace VaquitApp.ViewModel
 {
@@ -30,6 +31,8 @@ namespace VaquitApp.ViewModel
         public ICommand LimpiarIntegrantesCommand { get; set; }
 
         public ICommand CalcularCommand { get; set; }
+
+        public INavigation Navigation { get; set; }
 
         public AgregarIntegranteViewModel()
         {
@@ -73,10 +76,7 @@ namespace VaquitApp.ViewModel
         {
             try
             {
-                var Total = Integrantes.Sum(integrante => integrante.Aporte);
-                var Cuota = Total / Integrantes.Count;
-
-                Toast.ShowMessage(string.Format("Total: {0}, cada une tiene que poner {1}", Total, Cuota));
+                await Navigation.PushAsync(new CalcularView(Integrantes));
             }
             catch (Exception)
             {

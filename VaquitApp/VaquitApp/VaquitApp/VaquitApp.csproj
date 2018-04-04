@@ -41,16 +41,21 @@
     <Compile Include="Commons\IPlataformControls\IToastControl.cs" />
     <Compile Include="Commons\Observables\NotificationObject.cs" />
     <Compile Include="Commons\Observables\ObservableRangeCollection.cs" />
+    <Compile Include="IViewModel\ICalcularViewModel.cs" />
     <Compile Include="IViewModel\IAgregarIntegranteViewModel.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Integrante.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\CalcularViewModel.cs" />
     <Compile Include="ViewModel\AgregarIntegranteViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="View\AgregarIntegranteView.xaml.cs">
       <DependentUpon>AgregarIntegranteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CalcularView.xaml.cs">
+      <DependentUpon>CalcularView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -77,9 +82,14 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="View\AgregarIntegranteView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\CalcularView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
