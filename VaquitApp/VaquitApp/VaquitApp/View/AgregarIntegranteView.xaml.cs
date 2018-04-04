@@ -21,7 +21,13 @@ namespace VaquitApp.View
             BindingContext = vm = new AgregarIntegranteViewModel();
 
             ListaIntegrantes.ItemsSource = vm.Integrantes;
-            //ListaIntegrantes.ItemTapped += PedidosListView_ItemTapped;
+            ListaIntegrantes.ItemTapped += ListaIntegrantes_ItemTapped;
+        }
+
+        private void ListaIntegrantes_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e == null) return;
+            ((ListView)sender).SelectedItem = null;
         }
     }
 }

@@ -30,8 +30,6 @@ namespace VaquitApp.ViewModel
         public ICommand LimpiarIntegrantesCommand { get; set; }
 
         public ICommand CalcularCommand { get; set; }
-        
-
 
         public AgregarIntegranteViewModel()
         {
