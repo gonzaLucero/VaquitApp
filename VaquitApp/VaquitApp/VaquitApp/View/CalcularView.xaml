@@ -34,6 +34,8 @@
                                 <StackLayout Spacing="10" Margin="15">
                                     <StackLayout Orientation="Horizontal">
                                         <Label Text="{Binding Nombre}"></Label>
+                                        <Label Text="Aportó"></Label>
+                                        <Label Text="{Binding Aporte}"></Label>
                                         <Label Text="{Binding Accion}" HorizontalOptions="EndAndExpand" TextColor="{Binding Color}"></Label>
                                         <Label Text="{Binding Cuota}" HorizontalOptions="EndAndExpand" TextColor="{Binding Color}"></Label>
                                     </StackLayout>

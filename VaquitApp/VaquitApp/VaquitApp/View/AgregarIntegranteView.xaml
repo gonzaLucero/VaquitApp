@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VaquitApp.View.AgregarIntegranteView"
              Title="VaquitApp"
-             BindingContext="{Binding IAgregarIntegranteViewModel}">
+             BindingContext="{Binding IAgregarIntegranteViewModel}"
+             x:Name="Page">
     <ContentPage.Content>
         <StackLayout Style="{StaticResource ContentBase }">
             <StackLayout VerticalOptions="Start" Orientation="Horizontal">
@@ -13,6 +14,8 @@
                     <Entry
                     Text="{Binding Nombre}"
                     Placeholder="Ingrese el nombre del integrante"  
+                        Keyboard="Text"
+                        Completed="Entry_Completed"
                     HorizontalOptions="StartAndExpand" ></Entry>
                 </StackLayout>
 
@@ -20,9 +23,11 @@
                     <Label Text="Aporte"
                     HorizontalOptions="StartAndExpand" />
                     <Entry
+                        x:Name="aporteEntry"
                     Text="{Binding Aporte}"
-                    Placeholder="Ingrese el aporte del integrante"
+                    Placeholder="0"
                     Keyboard="Numeric"
+                        Completed="aporteEntry_Completed"
                     HorizontalOptions="StartAndExpand" ></Entry>
                 </StackLayout>
             </StackLayout>
@@ -50,6 +55,12 @@
                                     <StackLayout Orientation="Horizontal">
                                         <Label Text="{Binding Nombre}"></Label>
                                         <Label Text="{Binding Aporte}" HorizontalOptions="EndAndExpand"></Label>
+                                        <Button 
+                                            Image="ic_delete_black_24dp.png" 
+                                            BackgroundColor="Transparent"
+                                            VerticalOptions="Start"
+                                            Command="{Binding Path=BindingContext.BorrarIntegranteCommand, Source={x:Reference Page}}" 
+                                            CommandParameter="{Binding .}"></Button>
                                     </StackLayout>
                                 </StackLayout>
                             </ViewCell>

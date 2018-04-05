@@ -30,5 +30,16 @@ namespace VaquitApp.View
             if (e == null) return;
             ((ListView)sender).SelectedItem = null;
         }
+
+        private void Entry_Completed(object sender, EventArgs e)
+        {
+            aporteEntry.Text = string.Empty;
+            aporteEntry.Focus();
+        }
+
+        private void aporteEntry_Completed(object sender, EventArgs e)
+        {
+            vm.AgregarIntegranteCommand.Execute(null);
+        }
     }
 }

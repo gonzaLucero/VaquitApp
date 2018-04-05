@@ -32,6 +32,8 @@ namespace VaquitApp.ViewModel
 
         public ICommand CalcularCommand { get; set; }
 
+        public ICommand BorrarIntegranteCommand { get; set; }
+
         public INavigation Navigation { get; set; }
 
         public AgregarIntegranteViewModel()
@@ -39,7 +41,8 @@ namespace VaquitApp.ViewModel
             Integrantes = new ObservableRangeCollection<Integrante>();
             AgregarIntegranteCommand = new Command(async () => await AgregarIntegrante());
             LimpiarIntegrantesCommand = new Command(async () => await LimpiarIntegrantes());
-            CalcularCommand = new Command(async () => await Calcular()); 
+            CalcularCommand = new Command(async () => await Calcular());
+            BorrarIntegranteCommand = new Command<Integrante>(async (integrante) => await BorrarIntegrante(integrante));
         }
 
         private async Task AgregarIntegrante()
@@ -81,6 +84,19 @@ namespace VaquitApp.ViewModel
             catch (Exception)
             {
                 Toast.ShowMessage("Problema al limpiar la lista de integrantes. Por favor, vuelva a intentarlo");
+            }
+        }
+
+        private async Task BorrarIntegrante(Integrante integrante)
+        {
+            try
+            {
+                Integrantes.Remove(integrante);
+                Toast.ShowMessage("Integrante borrado con éxito");
+            }
+            catch (Exception)
+            {
+                Toast.ShowMessage("Problema al borrar el integrante. Por favor, vuelva a intentarlo");
             }
         }
     }
