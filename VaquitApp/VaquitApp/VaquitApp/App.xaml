@@ -8,7 +8,7 @@
             <Color x:Key="Primary">#212121</Color>
             <Color x:Key="PrimaryDark">#000000</Color>
             <Color x:Key="PrimaryLight">#484848</Color>
-            <Color x:Key="Secondary">#4a148c</Color>
+            <Color x:Key="Secondary">#ff80ab</Color>
             <Color x:Key="SecondaryDark">#12005e</Color>
             <Color x:Key="SecondaryLight">#7c43bd</Color>
             <Color x:Key="AccentColor">#f0ad4e</Color>

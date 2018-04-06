@@ -2,8 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VaquitApp.View.CalcularView"
-             Title="VaquitApp"
+             Title="Cálculo"
              BindingContext="{Binding ICalcularViewModel}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="@drawable/icon" Order="Primary" Name="VaquitApp"></ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Style="{StaticResource ContentBase }">
             <StackLayout VerticalOptions="Start" Orientation="Horizontal">

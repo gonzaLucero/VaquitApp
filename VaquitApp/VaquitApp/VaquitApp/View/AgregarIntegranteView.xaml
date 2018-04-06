@@ -2,33 +2,38 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VaquitApp.View.AgregarIntegranteView"
-             Title="VaquitApp"
+             Title="Agregar Integrantes"
              BindingContext="{Binding IAgregarIntegranteViewModel}"
              x:Name="Page">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="@drawable/icon" Order="Primary" Name="VaquitApp"></ToolbarItem>        
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Style="{StaticResource ContentBase }">
             <StackLayout VerticalOptions="Start" Orientation="Horizontal">
-                <StackLayout>
+                <StackLayout  HorizontalOptions="StartAndExpand">
                     <Label Text="Nombre del integrante"
-                        HorizontalOptions="StartAndExpand" />
+                        HorizontalOptions="FillAndExpand" />
                     <Entry
                     Text="{Binding Nombre}"
                     Placeholder="Ingrese el nombre del integrante"  
                         Keyboard="Text"
                         Completed="Entry_Completed"
-                    HorizontalOptions="StartAndExpand" ></Entry>
+                    HorizontalOptions="FillAndExpand" 
+                        ></Entry>
                 </StackLayout>
 
-                <StackLayout>
+                <StackLayout HorizontalOptions="StartAndExpand">
                     <Label Text="Aporte"
-                    HorizontalOptions="StartAndExpand" />
+                    HorizontalOptions="FillAndExpand" />
                     <Entry
                         x:Name="aporteEntry"
                     Text="{Binding Aporte}"
                     Placeholder="0"
                     Keyboard="Numeric"
                         Completed="aporteEntry_Completed"
-                    HorizontalOptions="StartAndExpand" ></Entry>
+                    HorizontalOptions="FillAndExpand" 
+                        ></Entry>
                 </StackLayout>
             </StackLayout>
             <StackLayout VerticalOptions="Start" Orientation="Horizontal">
@@ -53,12 +58,16 @@
                             <ViewCell>
                                 <StackLayout Spacing="10" Margin="15">
                                     <StackLayout Orientation="Horizontal">
+                                        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
                                         <Label Text="{Binding Nombre}"></Label>
-                                        <Label Text="{Binding Aporte}" HorizontalOptions="EndAndExpand"></Label>
+                                        <Label Text="{Binding Aporte}" HorizontalOptions="End"></Label>
+                                        </StackLayout>
                                         <Button 
                                             Image="ic_delete_black_24dp.png" 
                                             BackgroundColor="Transparent"
-                                            VerticalOptions="Start"
+                                            VerticalOptions="CenterAndExpand"
+                                            HorizontalOptions="EndAndExpand"
+                                            Margin="0"
                                             Command="{Binding Path=BindingContext.BorrarIntegranteCommand, Source={x:Reference Page}}" 
                                             CommandParameter="{Binding .}"></Button>
                                     </StackLayout>
