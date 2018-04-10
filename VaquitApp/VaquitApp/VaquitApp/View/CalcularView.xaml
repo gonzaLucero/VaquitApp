@@ -16,6 +16,7 @@
                         HorizontalOptions="StartAndExpand" />
                     <Label Style="{StaticResource ValueLabel }"
                     Text="{Binding Total}" 
+                           AutomationId="total"
                     HorizontalOptions="StartAndExpand" ></Label>
                 </StackLayout>
 

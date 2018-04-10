@@ -20,6 +20,7 @@
                         Keyboard="Text"
                         Completed="Entry_Completed"
                     HorizontalOptions="FillAndExpand" 
+                        AutomationId="nombre"
                         ></Entry>
                 </StackLayout>
 
@@ -33,6 +34,7 @@
                     Keyboard="Numeric"
                         Completed="aporteEntry_Completed"
                     HorizontalOptions="FillAndExpand" 
+                        AutomationId="aporte"
                         ></Entry>
                 </StackLayout>
             </StackLayout>
@@ -42,13 +44,15 @@
                     Style="{StaticResource MainButton }"
                     x:Name="btnAgregar"
                         Command="{Binding AgregarIntegranteCommand}"
-                    HorizontalOptions="FillAndExpand"></Button>
+                    HorizontalOptions="FillAndExpand"
+                    AutomationId="btnAgregar"></Button>
                 <Button
                     Text="Limpiar lista"
                     Style="{StaticResource SecondaryButton }"
                     x:Name="btnLimpiar"
                         Command="{Binding LimpiarIntegrantesCommand}"
-                    HorizontalOptions="FillAndExpand"></Button>
+                    HorizontalOptions="FillAndExpand"
+                    AutomationId="btnLimpiar"></Button>
             </StackLayout>
             <StackLayout VerticalOptions="End">
                 <ListView x:Name="ListaIntegrantes"
@@ -81,7 +85,8 @@
                     Style="{StaticResource MainButton }"
                     x:Name="btnCalcular"
                         Command="{Binding CalcularCommand}"
-                    HorizontalOptions="FillAndExpand"></Button>
+                    HorizontalOptions="FillAndExpand"
+                    AutomationId="btnCalcular"></Button>
             </StackLayout>
         </StackLayout>
 
