@@ -31,5 +31,5 @@ jobs:
       run: |
         cd VaquitApp
         nuget restore
-        cd VaquitApp/VaquitApp.Android
+        cd VaquitApp/VaquitApp.IOS
         msbuild VaquitApp.IOS.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
