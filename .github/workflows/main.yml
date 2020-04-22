@@ -15,10 +15,21 @@ jobs:
   Android:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Android
       run: |
         cd VaquitApp
         nuget restore
         cd VaquitApp/VaquitApp.Android
         msbuild VaquitApp.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
+        
+  IOs:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: IOs
+      run: |
+        cd VaquitApp
+        nuget restore
+        cd VaquitApp/VaquitApp.Android
+        msbuild VaquitApp.IOS.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
