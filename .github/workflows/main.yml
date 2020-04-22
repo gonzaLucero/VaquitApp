@@ -22,6 +22,7 @@ jobs:
         nuget restore
         cd VaquitApp/VaquitApp.Android
         msbuild VaquitApp.Android.csproj /verbosity:normal /t:Rebuild /p:Configuration=Release
+  
   AndroidCore:
     runs-on: macos-latest
     steps:
@@ -33,9 +34,10 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: |
+        cd VaquitApp        
+        cd VaquitApp/VaquitApp.Android
+        dotnet build --configuration Release --no-restore
         
   IOs:
     runs-on: macos-latest
