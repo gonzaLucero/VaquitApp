@@ -32,10 +32,11 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Install dependencies
-      run: dotnet restore
+      run: |        
+        cd VaquitApp
+        dotnet restore
     - name: Build
-      run: |
-        cd VaquitApp        
+      run: |    
         cd VaquitApp/VaquitApp.Android
         dotnet build --configuration Release --no-restore
         
