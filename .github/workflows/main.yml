@@ -37,7 +37,8 @@ jobs:
         dotnet restore
     - name: Build
       run: |    
-        cd VaquitApp/VaquitApp.Android
+        cd VaquitApp
+        cd VaquitApp.Android
         dotnet build --configuration Release --no-restore
         
   IOs:
